@@ -1,0 +1,240 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Explore useful calculators for California, Texas, New York, New Jersey and Florida.">
+  <meta name="theme-color" content="#102b46">
+  <title>USA Calculator Hub | Helpful US Calculators</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f4f7fb;
+      color: #172b43;
+      line-height: 1.6;
+    }
+    header {
+      background: #102b46;
+      color: white;
+      padding: 18px 6%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .logo { font-size: 22px; font-weight: bold; }
+    .logo span { color: #65d6c4; }
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 14px;
+      font-size: 14px;
+    }
+    .hero {
+      background: linear-gradient(135deg, #102b46, #205b79);
+      color: white;
+      text-align: center;
+      padding: 55px 18px 60px;
+    }
+    .tag {
+      display: inline-block;
+      background: #214c64;
+      border: 1px solid #4b8196;
+      border-radius: 30px;
+      padding: 5px 14px;
+      font-size: 13px;
+    }
+    h1 { font-size: clamp(30px, 5vw, 46px); line-height: 1.2; }
+    .hero p { max-width: 620px; margin: 16px auto 25px; color: #e0ebf5; }
+    .search {
+      max-width: 530px;
+      display: flex;
+      margin: 0 auto;
+      background: white;
+      border-radius: 10px;
+      padding: 5px;
+    }
+    .search input {
+      flex: 1;
+      min-width: 0;
+      border: 0;
+      outline: 0;
+      padding: 13px;
+      font-size: 15px;
+    }
+    .search button {
+      border: 0;
+      background: #19a88e;
+      color: white;
+      padding: 0 18px;
+      border-radius: 7px;
+      font-weight: bold;
+    }
+    main { max-width: 1100px; margin: auto; padding: 35px 18px; }
+    .section-title { text-align: center; margin-bottom: 8px; font-size: 28px; }
+    .intro { text-align: center; color: #63748a; margin: 0 auto 28px; }
+    .states {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 18px;
+    }
+    .state {
+      background: white;
+      border: 1px solid #e1e8f0;
+      border-radius: 14px;
+      padding: 23px;
+      box-shadow: 0 5px 18px #17324b0b;
+      transition: transform .2s;
+    }
+    .state:hover { transform: translateY(-3px); }
+    .state-icon { font-size: 30px; }
+    .state h3 { margin: 8px 0 3px; }
+    .state p { color: #63748a; font-size: 14px; margin: 0 0 15px; }
+    .state a {
+      display: inline-block;
+      background: #e9f8f5;
+      color: #087e6c;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 8px 13px;
+      border-radius: 7px;
+      font-size: 14px;
+    }
+    .coming { opacity: .8; }
+    .coming a { background: #edf1f6; color: #63748a; }
+    .info {
+      background: white;
+      border-radius: 14px;
+      margin-top: 32px;
+      padding: 25px;
+      border: 1px solid #e1e8f0;
+    }
+    .info h2 { margin-top: 0; }
+    footer {
+      margin-top: 25px;
+      background: #102b46;
+      color: #dce7f0;
+      text-align: center;
+      padding: 25px 15px;
+      font-size: 14px;
+    }
+    footer a { color: #65d6c4; margin: 0 8px; text-decoration: none; }
+    #noResults { display: none; text-align: center; padding: 20px; }
+    @media(max-width: 500px) {
+      header { justify-content: center; text-align: center; }
+      nav a { margin: 0 6px; }
+      .hero { padding-top: 40px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">USA <span>Calculator Hub</span></div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="#states">States</a>
+      <a href="#about">About</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <span class="tag">Simple • Helpful • Easy to Use</span>
+    <h1>Find the Right Calculator<br>for Your Needs</h1>
+    <p>Explore our growing collection of calculators designed to help people across the United States.</p>
+    <form class="search" id="searchForm">
+      <input id="searchInput" type="search" placeholder="Search a state..." aria-label="Search states">
+      <button type="submit">Search</button>
+    </form>
+  </section>
+
+  <main>
+    <h2 class="section-title" id="states">Explore US States</h2>
+    <p class="intro">Choose a state to explore its calculators.</p>
+
+    <div class="states" id="stateList">
+      <article class="state">
+        <div class="state-icon">🌴</div>
+        <h3>California</h3>
+        <p>Explore calculators for the Golden State.</p>
+        <a href="states/california/index.html">Explore California →</a>
+      </article>
+
+      <article class="state">
+        <div class="state-icon">⭐</div>
+        <h3>Texas</h3>
+        <p>Helpful tools for residents of Texas.</p>
+        <a href="states/texas/index.html">Explore Texas →</a>
+      </article>
+
+      <article class="state coming">
+        <div class="state-icon">🗽</div>
+        <h3>New York</h3>
+        <p>State calculators are coming soon.</p>
+        <a href="#states" aria-disabled="true">Coming Soon</a>
+      </article>
+
+      <article class="state coming">
+        <div class="state-icon">🏙️</div>
+        <h3>New Jersey</h3>
+        <p>State calculators are coming soon.</p>
+        <a href="#states" aria-disabled="true">Coming Soon</a>
+      </article>
+
+      <article class="state coming">
+        <div class="state-icon">☀️</div>
+        <h3>Florida</h3>
+        <p>State calculators are coming soon.</p>
+        <a href="#states" aria-disabled="true">Coming Soon</a>
+      </article>
+    </div>
+
+    <p id="noResults">No matching state found. Try another search.</p>
+
+    <section class="info" id="about">
+      <h2>About USA Calculator Hub</h2>
+      <p>Our goal is to build a collection of easy-to-use online calculators for everyday needs. We plan to add more state-specific tools as the website grows.</p>
+      <p>Always check official sources when making important financial, tax, or legal decisions.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2026 USA Calculator Hub</p>
+    <a href="about.html">About Us</a>
+    <a href="contact.html">Contact</a>
+    <a href="privacy-policy.html">Privacy Policy</a>
+    <a href="terms.html">Terms</a>
+    <a href="disclaimer.html">Disclaimer</a>
+  </footer>
+
+  <script>
+    const form = document.getElementById("searchForm");
+    const input = document.getElementById("searchInput");
+    const cards = document.querySelectorAll(".state");
+    const noResults = document.getElementById("noResults");
+
+    function filterStates() {
+      const query = input.value.trim().toLowerCase();
+      let found = 0;
+
+      cards.forEach(card => {
+        const matches = card.textContent.toLowerCase().includes(query);
+        card.style.display = matches ? "" : "none";
+        if (matches) found++;
+      });
+
+      noResults.style.display = found ? "none" : "block";
+    }
+
+    form.addEventListener("submit", event => {
+      event.preventDefault();
+      filterStates();
+    });
+
+    input.addEventListener("input", filterStates);
+  </script>
+</body>
+</html>
